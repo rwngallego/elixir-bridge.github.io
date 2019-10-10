@@ -14,19 +14,19 @@ Type this in the terminal:
 cd ~
 ```
 
-`cd ~` sets our home directory to our current directory.
+With this command we go to our home directory.
 
-### Step 2: Create an Elixirbridge directory
+### Step 2: Create a workshop directory
 
-To keep things organized, we'll want all of the elixirbridge files in their own directory. Type this in the terminal:
+To keep things organized, we'll want all of the *elixirbridge workshop* files in their own directory. Type this in the terminal:
 
 ```
 mkdir elixirbridge
 ```
 
-`mkdir` stands for make directory (folder). We've now made a folder called `elixirbridge`.
+`mkdir` stands for make directory (folder). We've now created a folder called `elixirbridge`.
 
-### Step 3:
+### Step 3: Go to your workshop directory
 
 Change to your new `elixirbridge` directory. Type this in the terminal:
 
@@ -121,4 +121,4 @@ In your browser, open [localhost:4000](http://localhost:4000). You should see a 
 
 ![](/assets/welcome-to-phoenix.png)
 
-Hit `Ctrl c` **twice** to stop the server.
+Hit `Ctrl c` **twice** in your console to stop the server.

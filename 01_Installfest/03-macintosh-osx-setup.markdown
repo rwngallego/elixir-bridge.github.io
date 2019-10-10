@@ -44,8 +44,6 @@ Target: x86_64-apple-darwin14.0.0
 Thread model: posix
 ```
 
-If you see something about Darwin and LLVM, you are good to go. If not, use one of the steps below to install the tools. Come back afterwards and run this command again to make sure it works!
-
 **If you see something about Darwin and LLVM, you are good to go. If not, use one of the steps below to install the tools. Come back afterwords and run this command to make sure it works!**
 
 #### Step 2.3: Run the xcode-select command

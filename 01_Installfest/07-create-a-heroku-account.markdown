@@ -52,59 +52,60 @@ heroku keys:add
 
 Enter your Heroku email and password, if prompted, and accept the defaults.
 
-#### Step 6: Optional (Create a Github Account)
+#### Step 6: Optional (Create a GitHub Account)
 
 You can use GitHub to store your code online and access it from anywhere. This step isn't necessary to deploy your apps to the web though.
 
-#### Step 1: Visit the GitHub web site
+##### Step 6.1: Visit the GitHub web site
 
-https://github.com
+[https://github.com](https://github.com)
 
-#### Step 2: Create an Account
+##### Step 6.2: Create an Account
 
-Enter a username, your email address and a password. Click the green Sign Up for GitHub button.
+Enter a username, your email address and a password. Click the green **Sign Up for GitHub** button.
 
 {:.message.important.vertical-centerer}
   Use the same email address below for Heroku, git, GitHub, and ssh. Be sure to use an email account you can log into immediately.
 
-#### Step 3: Select a plan
-GitHub provides several levels of account plans but you can create unlimited public repositories with a free plan so for now, you can select that one. Hit the Continue button, and skip the next step if you see it (with a survey.)
+##### Step 6.3: Select a plan
+GitHub provides several levels of account plans but you can create unlimited public/private repositories with a free plan so for now, you can select that one. Hit the **Continue** button, and skip the next step if you see it (with a survey).
 
-#### Step 4: Set up SSH authentication with GitHub
+##### Step 6.4: Copy the SSH Key for you GitHub account
 
 Adding an SSH key to GitHub allows you to pull and push data without typing in your password all the time. First we'll copy the key we generated in the chapter titled **Create an SSH Key**, and add it to your GitHub account. We'll use a terminal command to do that, so that we don't add any newlines or whitespace that could cause an error.
 
-##### Mac users
+- Mac users
 
-Type this in the terminal:
+  Type this in the terminal:
 
-```
-pbcopy < ~/.ssh/id_rsa.pub
-```
+  ```
+  pbcopy < ~/.ssh/id_rsa.pub
+  ```
 
-##### Linux users
+- Linux users
 
-Type this in the terminal:
+  Type this in the terminal:
 
-```
-sudo apt-get install xclip
-xclip -sel clip < ~/.ssh/id_rsa.pub
-```
+  ```
+  sudo apt-get install xclip
+  xclip -sel clip < ~/.ssh/id_rsa.pub
+  ```
 
-The first line (`sudo apt-get install xclip`) installs a tiny application, xclip, that lets us copy the contents of a file without opening it. Mac and Windows users have similar things already installed (pbcopy and clip).
+  The first line (`sudo apt-get install xclip`) installs a tiny application, xclip, that lets us copy the contents of a file without opening it. Mac and Windows users have similar things already installed (pbcopy and clip).
 
-##### Windows users
+- Windows users
 
-Type this in the terminal:
+  Type this in the terminal:
 
-```
-clip < "%userprofile%\.ssh\id_rsa.pub"
-```
+  ```
+  clip < "%userprofile%\.ssh\id_rsa.pub"
+  ```
 
 Now that you have copied the key to your clipboard, you can add it to the GitHub account you created earlier.
 
-##### Add your SSH key to GitHub
-Navigate to github.com and make sure you are logged in. On any page on the GitHub site, click your profile photo in the top right corner to the right of the plus sign. In the drop-down menu, click **Settings** to go to the account settings page.
+##### Step 6.5: Add your SSH key to GitHub
+
+Navigate to [github.com](https://github.com) and make sure you are logged in. On any page on the GitHub site, click your profile photo in the top right corner to the right of the plus sign. In the drop-down menu, click **Settings** to go to the account settings page.
 
 On the account settings page, select **SSH and GPG keys** from the column on the left.
 
@@ -114,7 +115,7 @@ Click **Add SSH key**
 
 Confirm the action by providing your GitHub Password
 
-#### Step 5: Confirm SSH Authentication
+##### Step 6.6: Confirm SSH Authentication
 
 Confirm that you have successfully set up SSH Authentication for GitHub. Note that Windows users cannot perform this step.
 

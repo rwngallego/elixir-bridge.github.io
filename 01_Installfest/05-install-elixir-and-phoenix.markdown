@@ -93,4 +93,4 @@ Expected Result:
 mix phx.new       # Creates a new Phoenix v1.3.0 application
 ```
 
-You will likely see other mix commands, but that's the important one.
+Any version greater than 1.3.0 is fine. You will likely see other mix commands, but that's the important one.

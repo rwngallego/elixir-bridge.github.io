@@ -7,7 +7,7 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: ElixirBridge
+title: ElixirBridge for Girls
 subtitle: "A place to learn Elixir"
 email: info@elixirbridge.org
 name: ElixirBridge

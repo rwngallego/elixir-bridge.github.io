@@ -17,11 +17,7 @@ Let's see if you have a pre-existing SSH key on your computer - you might have o
 ```
 ls ~/.ssh/id_rsa
 ```
-If you see the message `No such file or directory`, you don't have one.
-
-Continue to [Generate an SSH key](#generate-an-ssh-key)
-
-Otherwise skip ahead to the next chapter, **Create a Heroku Account**
+If you see the message `No such file or directory`, we need to generate an SSH Key. Otherwise skip ahead to the next chapter, **Create a Heroku Account**.
 
 #### Step 10.2: Generate an SSH Key
 
@@ -85,7 +81,9 @@ Enter passphrase for /Users/student/.ssh/id_rsa:
 Identity added: /Users/student/.ssh/id_rsa (/Users/student/.ssh/id_rsa)"
 ```
 
-If you did not see any errors, you can skip to the next chapter.
+If you did not see any errors, we're done! You can continue with the next chapter.
+
+#### Troubleshooting
 
 If you saw this error:
 
@@ -93,25 +91,24 @@ If you saw this error:
 Could not open a connection to your authentication agent
 ```
 
+It's possible your ssh-agent is not running. Here are a few commands that you can try to use to start the ssh-agent:
 
-it's possible your ssh-agent is not running. Here are a few commands that you can try to use to start the ssh-agent:
+- For some Windows machines:
 
-For some Windows machines:
+  ```
+  eval `ssh-agent -s`
+  ```
 
-```
-eval `ssh-agent -s`
-```
+- For others (confirmed on some Windows 7, 8, 8.1, and 10 setups):
 
-For others (confirmed on some Windows 7, 8, 8.1, and 10 setups):
+  ```
+  eval $(ssh-agent)
+  ```
 
-```
-eval $(ssh-agent)
-```
+- For Linux:
 
-For Linux:
+  ```
+  eval `ssh-agent`
+  ```
 
-```
-eval `ssh-agent`
-```
-
-For additional options, this [StackOverflow thread](http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent) has been helpful.
+- For additional options, this [StackOverflow thread](http://stackoverflow.com/questions/17846529/could-not-open-a-connection-to-your-authentication-agent) has been helpful.
