@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="R6ba5MLXyH1nPWUW2FaRbcaaqid5fFEUiymqWpcGEFc" />
+
+  <title>Operators and Variables</title>
+  <meta name="description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  
+  <meta name="author" content="ElixirBridge">
+  <meta name="copyright" content="&copy; ElixirBridge 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/elixir-bridge.github.io/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/elixir-bridge.github.io/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/elixir-bridge.github.io/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/elixir-bridge.github.io/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/elixir-bridge.github.io/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/elixir-bridge.github.io/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/elixir-bridge.github.io/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/elixir-bridge.github.io/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/elixir-bridge.github.io/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/elixir-bridge.github.io/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/elixir-bridge.github.io/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/elixir-bridge.github.io/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/elixir-bridge.github.io/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/elixir-bridge.github.io/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/elixir-bridge.github.io/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="ElixirBridge for Girls" />
+  <meta property="og:title" content="Operators and Variables" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/elixir-bridge.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Operators and Variables">
+  <meta name="twitter:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  <meta name="twitter:image" content="/elixir-bridge.github.io/assets/logo.png">
+  <meta name="twitter:url" content="">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/elixir-bridge.github.io/css/main.css">
+  <link rel="canonical" href="/elixir-bridge.github.io/02_Intro_to_Elixir/05-operators-and-variables.html">
+  <link rel="alternate" type="application/rss+xml" title="ElixirBridge for Girls" href="/elixir-bridge.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/elixir-bridge.github.io/" class="logo">
+      
+      <img src="/elixir-bridge.github.io/assets/logo.png" alt="ElixirBridge for Girls">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+
+
+    <div class="page-wrapper">
+      <div class="sidebar">
+  <!-- get the sections -->
+
+
+
+
+<!-- make them an array -->
+
+
+
+<h4>
+  
+    <a href="/docs">Docs</a>
+  
+</h4>
+
+
+<!-- spit them out as a list of lists -->
+
+  
+
+  
+    <h4>Installfest</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/01-begin-installfest.html'>Installfest</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/02-choose-your-own-operating-system.html'>Choose your own operating system</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-macintosh-osx-setup.html'>Mac OSX setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-windows-setup.html'>Windows setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/04-install-and-configure-git.html'>Install and Configure git</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/05-install-elixir-and-phoenix.html'>Install Elixir and Phoenix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/06-create-an-ssh-key.html'>Create an SSH Key</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/07-create-a-heroku-account.html'>Create a Heroku Account</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/08-create-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/09-generate-a-database-model.html'>Generate a Database Model</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/10-deploy-a-phoenix-app.html'>Deploy a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/11-deploy-to-heroku.html'>Deploy to Heroku</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Elixir</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/01-why-program-why-elixir.html'>Why program? Why elixir?</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/03-learning-elixir.html'>Learning Elixir</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/04-elixir-types.html'>Elixir Types</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05-operators-and-variables.html'>Operators and Variables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.5-anonymous-functions-lists-and-tuples.html'>Lists and Tuples</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.6-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.7-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.9-enumerables.html'>Enumerables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06-pattern-matching.html'>Pattern Matching</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.4-modules.html'>Modules</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.5_Functions.html'>Functions</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/08-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/09-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/12-recursion.html'>Recursion</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Phoenix</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/01-creating-a-chat-app.html'>Creating a Chat App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/02-add-a-perisistence-layer.html'>Adding a Persistence layer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/13-create-a-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/14-running-the-application-locally.html'>Running the Application Locally</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/15-creating-a-migration.html'>Creating a Migration</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/16-phoenix-architecture.html'>Phoenix architecture</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/17-CRUD-with-scaffolding.html'>CRUD with scaffolding</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/18-setting-the-default-page.html'>Setting the Default Page</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Mix Applications</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/01-mix.html'>Mix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/02-adding-dependencies.html'>Adding dependencies</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/03-testing.html'>Testing</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/04-set-up-my-app.html'>Our first application</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/05-interacting-with-iex.html'>Interacting with iex</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/06-environments.html'>Environments</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/07-documentation.html'>Documentation</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/12-supervisors.html'>Supervisors</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/13-router.html'>Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/14-plugs.html'>Plugs</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/15-plug-router.html'>Plug.Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16-templating.html'>Templating</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16.5-genserver.html'>GenServer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/17-deployment.html'>Deployment</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/18-dockerfile.html'>Docker and the Dockerfile</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/19-distillery-config.html'>Distillery</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/20-running-docker.html'>Running docker</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+
+</div>
+
+      <div class="page-content">
+          <div class="wrapper">
+<div class="page">
+
+  <header class="post-header">
+    <h1 class="post-title">Operators and Variables</h1>
+  </header>
+
+  <article class="post-content">
+    <h3 id="comparison">Comparison</h3>
+
+<p>Let’s take a look at how we might compare variables in Elixir</p>
+
+<p>Here are some examples.</p>
+
+<p>Try typing the examples below into your console</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">1</span> <span class="o">+</span> <span class="m">1</span> <span class="o">==</span> <span class="m">2</span>
+<span class="m">1</span> <span class="o">&gt;</span> <span class="m">2</span>
+<span class="m">2</span> <span class="o">&lt;=</span> <span class="m">4</span>
+<span class="m">1</span> <span class="o">!=</span> <span class="m">2</span>
+</code></pre></div></div>
+
+<h3 id="strict-comparison">Strict Comparison</h3>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="m">2</span> <span class="o">==</span> <span class="m">2.0</span> <span class="c1"># true</span>
+<span class="m">2</span> <span class="o">===</span> <span class="m">2.0</span> <span class="c1"># false</span>
+</code></pre></div></div>
+
+<p>What is different about the expression above?
+*hint: Thing about data types.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>In Elixir, we’ll use variables all over the place. Assign values to variables in elixir works differently than it does in imperative languages like Ruby or Javascript.</p>
+
+<p>However for now let’s pretend that “assignment” works just as it does in other languages.</p>
+
+<p>We will go into what is happening under the hood in the section on Pattern Matching.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="m">3</span>
+</code></pre></div></div>
+
+<p>What values do x and y have now?</p>
+
+<p>All of the following can be variables</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="m">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="m">0x0F</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">div</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="how-assignment-actually-works-in-elixir">How Assignment Actually works in Elixir</h3>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="m">3</span>
+</code></pre></div></div>
+
+<p>If we look at the code above. It looks like we have variables on the left-hand side of our expression and values on the right. And it appears that the values on the right are being “assigned” to the values on the left. However in elixir there is no assignment operator. The “=” is called the match operator. What does this mean?</p>
+
+<p>In elixir the “=” matches the term on the right to the “pattern” on left.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="m">1</span> <span class="c1"># 1</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">tuple</span> <span class="o">=</span> <span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="sd">"</span><span class="s2">Hello"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Note that Erlang (and thus Elixir) create immutable data. That is, the original tuple is not replaced, but a new tuple based upon the first one is created.
+It turns out that even though it feels like a hinderance, using immutable data makes our software easier to reason about and never need to worry about overwriting variables in memory (thus preventing race conditions) and more.
+Although we don’t need to focus on this now, it’s a good idea to keep in mind that no variable is manipulated after it’s created, but that a new one is created.</p>
+
+<h1 id="operators">Operators</h1>
+
+<p>Elixir has a lot of built-in operators. We’ve already seen a few, such as addition (<code class="highlighter-rouge">+</code>), division (<code class="highlighter-rouge">/</code>), and those for list manipulation (<code class="highlighter-rouge">++</code> and <code class="highlighter-rouge">--</code>):</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span> <span class="o">++</span> <span class="p">[</span><span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">,</span> <span class="m">6</span><span class="p">]</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span> <span class="o">--</span> <span class="p">[</span><span class="m">2</span><span class="p">]</span>
+<span class="p">[</span><span class="m">1</span><span class="p">,</span> <span class="m">3</span><span class="p">]</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="sd">"</span><span class="s2">Hello "</span> <span class="o">&lt;&gt;</span> <span class="sd">"</span><span class="s2">World"</span>
+<span class="sd">"</span><span class="s2">Hello World"</span>
+</code></pre></div></div>
+
+<p>There are also boolean operators, such as <code class="highlighter-rouge">and</code>, <code class="highlighter-rouge">or</code>, and <code class="highlighter-rouge">not</code>. We need to use a boolean or any function that returns either true or false as the first argument of these operators.</p>
+
+<h3 id="and">And</h3>
+
+<p>Elixir will evaluate the first term in the expression with the <code class="highlighter-rouge">and</code> operator. If that term returns true, it will move on to the second term. If it’s false, it won’t evaluate the second term.</p>
+
+<p>Try the following:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="no">true</span> <span class="ow">and</span> <span class="no">true</span>
+<span class="no">true</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">is_atom</span><span class="p">(</span><span class="sd">"</span><span class="s2">string"</span><span class="p">)</span> <span class="ow">and</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="sd">"</span><span class="s2">This won't print"</span><span class="p">)</span>
+<span class="no">false</span>
+</code></pre></div></div>
+
+<h3 id="or">Or</h3>
+
+<p>Or is similar, in that it will evaluate the first term, but if it is <em>true</em>, it won’t evaluate the second term.</p>
+
+<p>Try the following:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="no">false</span> <span class="ow">or</span> <span class="no">true</span>
+<span class="no">true</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="no">true</span> <span class="ow">or</span> <span class="no">IO</span><span class="o">.</span><span class="n">puts</span><span class="p">(</span><span class="sd">"</span><span class="s2">This won't print"</span><span class="p">)</span>
+<span class="no">true</span>
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">or</code> and <code class="highlighter-rouge">and</code> operators are called <em>short-circuit</em> operators as they execute the left-side first and only execute the right side if necessary.</p>
+
+<p>We can use the <code class="highlighter-rouge">||</code> (logical OR), <code class="highlighter-rouge">&amp;&amp;</code> (logical AND), and <code class="highlighter-rouge">!</code> (logical not) operators which accept arguments of all types. All values from these operators evaluate to true except for <code class="highlighter-rouge">false</code> and <code class="highlighter-rouge">nil</code>.</p>
+
+<p>Try the following:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="m">1</span> <span class="o">||</span> <span class="no">true</span>
+<span class="m">1</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="no">nil</span> <span class="o">&amp;&amp;</span> <span class="m">13</span>
+<span class="no">nil</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="n">!1</span>
+<span class="no">false</span>
+</code></pre></div></div>
+
+<h3 id="equality">Equality</h3>
+
+<p>We can compare values using the <code class="highlighter-rouge">==</code>, <code class="highlighter-rouge">!=</code>, <code class="highlighter-rouge">===</code>, <code class="highlighter-rouge">!==</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;=</code>, <code class="highlighter-rouge">&lt;</code>, and <code class="highlighter-rouge">&gt;</code> comparison operators. The <code class="highlighter-rouge">==</code> operator and <code class="highlighter-rouge">===</code> have different levels of strict-ness, where the <code class="highlighter-rouge">==</code> operator is less restrictive:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="o">&gt;</span> <span class="m">1</span> <span class="o">==</span> <span class="m">1.0</span>
+<span class="no">true</span>
+<span class="n">iex</span><span class="o">&gt;</span> <span class="m">1</span> <span class="o">===</span> <span class="m">1.0</span>
+<span class="no">false</span>
+</code></pre></div></div>
+
+  </article>
+  
+  
+  
+  
+    <h4>Next step: </h4>
+    <p>Go on to <a href="/02_Intro_to_Elixir/05.5-anonymous-functions-lists-and-tuples.html">Lists and Tuples</a>.</p>
+  
+  
+    <h4>Or:</h4>
+    <p>Go back to <a href="/02_Intro_to_Elixir/04-elixir-types.html">Elixir Types</a>.</p>
+  
+
+
+
+</div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">ElixirBridge for Girls</h3>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:info@elixirbridge.org">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">info@elixirbridge.org</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/elixirbridge" title="Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/elixir-bridge" title="GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/elixir-bridge.github.io/feed.xml">via RSS</a></strong></p>
+      <p class="text">We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+  // Syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  const hamburgerMenu = document.getElementById("js-mobile-menu")
+  const sidebar = document.getElementsByClassName("sidebar")[0]
+
+  hamburgerMenu.addEventListener("click", () => {
+    sidebar.classList.toggle("mobile-show")
+  })
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

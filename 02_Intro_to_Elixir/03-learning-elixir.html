@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="R6ba5MLXyH1nPWUW2FaRbcaaqid5fFEUiymqWpcGEFc" />
+
+  <title>Learning Elixir</title>
+  <meta name="description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  
+  <meta name="author" content="ElixirBridge">
+  <meta name="copyright" content="&copy; ElixirBridge 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/elixir-bridge.github.io/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/elixir-bridge.github.io/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/elixir-bridge.github.io/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/elixir-bridge.github.io/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/elixir-bridge.github.io/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/elixir-bridge.github.io/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/elixir-bridge.github.io/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/elixir-bridge.github.io/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/elixir-bridge.github.io/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/elixir-bridge.github.io/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/elixir-bridge.github.io/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/elixir-bridge.github.io/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/elixir-bridge.github.io/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/elixir-bridge.github.io/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/elixir-bridge.github.io/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="ElixirBridge for Girls" />
+  <meta property="og:title" content="Learning Elixir" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/elixir-bridge.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Learning Elixir">
+  <meta name="twitter:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  <meta name="twitter:image" content="/elixir-bridge.github.io/assets/logo.png">
+  <meta name="twitter:url" content="">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/elixir-bridge.github.io/css/main.css">
+  <link rel="canonical" href="/elixir-bridge.github.io/02_Intro_to_Elixir/03-learning-elixir.html">
+  <link rel="alternate" type="application/rss+xml" title="ElixirBridge for Girls" href="/elixir-bridge.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/elixir-bridge.github.io/" class="logo">
+      
+      <img src="/elixir-bridge.github.io/assets/logo.png" alt="ElixirBridge for Girls">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+
+
+    <div class="page-wrapper">
+      <div class="sidebar">
+  <!-- get the sections -->
+
+
+
+
+<!-- make them an array -->
+
+
+
+<h4>
+  
+    <a href="/docs">Docs</a>
+  
+</h4>
+
+
+<!-- spit them out as a list of lists -->
+
+  
+
+  
+    <h4>Installfest</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/01-begin-installfest.html'>Installfest</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/02-choose-your-own-operating-system.html'>Choose your own operating system</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-macintosh-osx-setup.html'>Mac OSX setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-windows-setup.html'>Windows setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/04-install-and-configure-git.html'>Install and Configure git</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/05-install-elixir-and-phoenix.html'>Install Elixir and Phoenix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/06-create-an-ssh-key.html'>Create an SSH Key</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/07-create-a-heroku-account.html'>Create a Heroku Account</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/08-create-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/09-generate-a-database-model.html'>Generate a Database Model</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/10-deploy-a-phoenix-app.html'>Deploy a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/11-deploy-to-heroku.html'>Deploy to Heroku</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Elixir</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/01-why-program-why-elixir.html'>Why program? Why elixir?</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/03-learning-elixir.html'>Learning Elixir</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/04-elixir-types.html'>Elixir Types</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05-operators-and-variables.html'>Operators and Variables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.5-anonymous-functions-lists-and-tuples.html'>Lists and Tuples</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.6-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.7-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.9-enumerables.html'>Enumerables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06-pattern-matching.html'>Pattern Matching</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.4-modules.html'>Modules</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.5_Functions.html'>Functions</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/08-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/09-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/12-recursion.html'>Recursion</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Phoenix</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/01-creating-a-chat-app.html'>Creating a Chat App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/02-add-a-perisistence-layer.html'>Adding a Persistence layer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/13-create-a-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/14-running-the-application-locally.html'>Running the Application Locally</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/15-creating-a-migration.html'>Creating a Migration</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/16-phoenix-architecture.html'>Phoenix architecture</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/17-CRUD-with-scaffolding.html'>CRUD with scaffolding</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/18-setting-the-default-page.html'>Setting the Default Page</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Mix Applications</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/01-mix.html'>Mix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/02-adding-dependencies.html'>Adding dependencies</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/03-testing.html'>Testing</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/04-set-up-my-app.html'>Our first application</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/05-interacting-with-iex.html'>Interacting with iex</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/06-environments.html'>Environments</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/07-documentation.html'>Documentation</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/12-supervisors.html'>Supervisors</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/13-router.html'>Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/14-plugs.html'>Plugs</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/15-plug-router.html'>Plug.Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16-templating.html'>Templating</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16.5-genserver.html'>GenServer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/17-deployment.html'>Deployment</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/18-dockerfile.html'>Docker and the Dockerfile</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/19-distillery-config.html'>Distillery</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/20-running-docker.html'>Running docker</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+
+</div>
+
+      <div class="page-content">
+          <div class="wrapper">
+<div class="page">
+
+  <header class="post-header">
+    <h1 class="post-title">Learning Elixir</h1>
+  </header>
+
+  <article class="post-content">
+    <h2 id="goals">Goals</h2>
+
+<p>By the end of this section, you’ll know:</p>
+
+<ul>
+  <li>The basics of Elixir</li>
+  <li>Use the elixir REPL to run elixir code</li>
+  <li>Run elixir code from a script</li>
+  <li>How to find elixir documentation</li>
+</ul>
+
+<h2 id="getting-started">Getting started</h2>
+
+<h4 id="iex">iex</h4>
+
+<p>We can use the REPL (Read-Eval-Print Loop) command-line tool to write and run simple elixir calculations directly from the command-line. The REPL tool is great for writing simple elixir code, checking on syntax, and understanding how the Elixir run-time works.</p>
+
+<p>Let’s open the Interactive Elixir REPL.</p>
+
+<p>Type <code class="highlighter-rouge">iex</code> into your command line.</p>
+
+<p>The <code class="highlighter-rouge">iex</code> command (_I_nteractive _E_li_X_ir), which launches the Interactive EliXir command prompt.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span><span class="err">$</span> <span class="n">iex</span>
+<span class="no">Erlang</span><span class="o">/</span><span class="no">OTP</span> <span class="m">21</span> <span class="p">[</span><span class="n">erts</span><span class="o">-</span><span class="m">10.0</span><span class="p">]</span> <span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="p">[</span><span class="m">64</span><span class="o">-</span><span class="n">bit</span><span class="p">]</span> <span class="p">[</span><span class="ss">smp:</span><span class="m">4</span><span class="p">:</span><span class="m">4</span><span class="p">]</span> <span class="p">[</span><span class="ss">ds:</span><span class="m">4</span><span class="p">:</span><span class="m">4</span><span class="p">:</span><span class="m">10</span><span class="p">]</span> <span class="p">[</span><span class="n">async</span><span class="o">-</span><span class="ss">threads:</span><span class="m">1</span><span class="p">]</span> <span class="p">[</span><span class="n">hipe</span><span class="p">]</span>
+
+<span class="no">Interactive</span> <span class="no">Elixir</span> <span class="p">(</span><span class="m">1.7</span><span class="o">.</span><span class="m">4</span><span class="p">)</span> <span class="o">-</span> <span class="n">press</span> <span class="no">Ctrl</span><span class="o">+</span><span class="no">C</span> <span class="n">to</span> <span class="k">exit</span> <span class="p">(</span><span class="n">type</span> <span class="n">h</span><span class="p">()</span> <span class="no">ENTER</span> <span class="n">for</span> <span class="n">help</span><span class="p">)</span>
+<span class="n">iex</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p>From this console, we’ll be able to play around and experiment with Elixir. Anytime that you see code prepended by the string <code class="highlighter-rouge">iex&gt; </code>, this means we’re working inside the REPL. Feel free to try it along with us as we go. It’s a good way to get your fingers working through writing Elixir.</p>
+
+<h3 id="h-command">h command</h3>
+
+<p>The <code class="highlighter-rouge">h</code> command is the help command. It is very useful to find information the elixir language</p>
+
+<p>Type <code class="highlighter-rouge">h()</code> into the command line</p>
+
+<p>You should see something similar to the following:</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">()</span>
+
+                                  <span class="no">IEx</span><span class="o">.</span><span class="no">Helpers</span>
+
+<span class="no">Welcome</span> <span class="n">to</span> <span class="no">Interactive</span> <span class="no">Elixir</span><span class="o">.</span> <span class="no">You</span> <span class="n">are</span> <span class="n">currently</span> <span class="n">seeing</span> <span class="n">the</span> <span class="n">documentation</span> <span class="n">for</span>
+<span class="n">the</span> <span class="n">module</span> <span class="no">IEx</span><span class="o">.</span><span class="no">Helpers</span> <span class="n">which</span> <span class="n">provides</span> <span class="n">many</span> <span class="n">helpers</span> <span class="n">to</span> <span class="n">make</span> <span class="no">Elixir</span><span class="err">'</span><span class="n">s</span> <span class="n">shell</span> <span class="n">more</span>
+<span class="n">joyful</span> <span class="n">to</span> <span class="n">work</span> <span class="n">with</span><span class="o">.</span>
+
+<span class="no">This</span> <span class="n">message</span> <span class="n">was</span> <span class="n">triggered</span> <span class="n">by</span> <span class="n">invoking</span> <span class="n">the</span> <span class="n">helper</span> <span class="n">h</span><span class="p">(),</span> <span class="n">usually</span> <span class="n">referred</span> <span class="n">to</span> <span class="n">as</span>
+<span class="n">h</span><span class="o">/</span><span class="m">0</span> <span class="p">(</span><span class="n">since</span> <span class="n">it</span> <span class="n">expects</span> <span class="m">0</span> <span class="n">arguments</span><span class="p">)</span><span class="o">.</span>
+
+<span class="no">You</span> <span class="n">can</span> <span class="kn">use</span> <span class="n">the</span> <span class="n">h</span><span class="o">/</span><span class="m">1</span> <span class="n">function</span> <span class="n">to</span> <span class="n">invoke</span> <span class="n">the</span> <span class="n">documentation</span> <span class="n">for</span> <span class="n">any</span> <span class="no">Elixir</span> <span class="n">module</span>
+<span class="ow">or</span> <span class="ss">function:</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="no">Enum</span><span class="p">)</span>
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">map</span><span class="p">)</span>
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="n">h</span><span class="p">(</span><span class="no">Enum</span><span class="o">.</span><span class="n">reverse</span><span class="o">/</span><span class="m">1</span><span class="p">)</span>
+
+<span class="no">You</span> <span class="n">can</span> <span class="n">also</span> <span class="kn">use</span> <span class="n">the</span> <span class="n">i</span><span class="o">/</span><span class="m">1</span> <span class="n">function</span> <span class="n">to</span> <span class="n">introspect</span> <span class="n">any</span> <span class="n">value</span> <span class="n">you</span> <span class="n">have</span> <span class="ow">in</span> <span class="n">the</span>
+<span class="ss">shell:</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="n">i</span><span class="p">(</span><span class="sd">"</span><span class="s2">hello"</span><span class="p">)</span>
+
+<span class="no">There</span> <span class="n">are</span> <span class="n">many</span> <span class="n">other</span> <span class="n">helpers</span> <span class="n">available</span><span class="p">,</span> <span class="n">here</span> <span class="n">are</span> <span class="n">some</span> <span class="ss">examples:</span>
+<span class="o">...</span>
+</code></pre></div></div>
+
+<h3 id="notation">Notation</h3>
+
+<p>In this section, we’ll be using a few notations it’s good to know about before we start.</p>
+
+<p>If you see the notation of a name followed by a <code class="highlighter-rouge">/</code> and number, this indicates a function and it’s number of arguments (arity). For example:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">is_integer/1</code> - indicates a function called <code class="highlighter-rouge">is_integer</code> that accepts <code class="highlighter-rouge">1</code> argument.</li>
+</ul>
+
+<p>Newer versions of IEx have implemented the h/1 command. ‘h’ is a quick access to the docs. Let’s try it with the <code class="highlighter-rouge">Integer.to_string</code>:</p>
+
+<p>Type: <code class="highlighter-rouge">h Integer.to_string</code> into command line</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="p">(</span><span class="m">4</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">h</span> <span class="no">Integer</span><span class="o">.</span><span class="n">to_string</span>
+
+                             <span class="k">def</span> <span class="n">to_string</span><span class="p">(</span><span class="n">integer</span><span class="p">)</span>
+                             
+  <span class="nv">@spec</span> <span class="n">to_string</span><span class="p">(</span><span class="n">integer</span><span class="p">())</span> <span class="p">::</span> <span class="no">String</span><span class="o">.</span><span class="n">t</span><span class="p">()</span>
+
+<span class="no">Returns</span> <span class="n">a</span> <span class="n">binary</span> <span class="n">which</span> <span class="n">corresponds</span> <span class="n">to</span> <span class="n">the</span> <span class="n">text</span> <span class="n">representation</span> <span class="n">of</span> <span class="n">integer</span><span class="o">.</span>
+
+<span class="no">Inlined</span> <span class="n">by</span> <span class="n">the</span> <span class="n">compiler</span><span class="o">.</span>
+
+<span class="c1">## Examples</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="m">123</span><span class="p">)</span>
+    <span class="sd">"</span><span class="s2">123"</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="o">+</span><span class="m">456</span><span class="p">)</span>
+    <span class="sd">"</span><span class="s2">456"</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="o">-</span><span class="m">789</span><span class="p">)</span>
+    <span class="sd">"</span><span class="s2">-789"</span>
+
+    <span class="n">iex</span><span class="o">&gt;</span> <span class="no">Integer</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="m">0123</span><span class="p">)</span>
+    <span class="sd">"</span><span class="s2">123"</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>So as you can see, the <code class="highlighter-rouge">h</code> method shows you the arguments the function takes and examples of how it is used.
+In this case <code class="highlighter-rouge">Integer.to_string</code> takes an integer and returns a string.</p>
+  </li>
+  <li>
+    <p>There is a second function defined by <code class="highlighter-rouge">Integer.to_string</code> defined in the docs but we won’t worry about that for now.</p>
+  </li>
+</ul>
+
+<p>To exit the <code class="highlighter-rouge">iex</code> prompt, press <code class="highlighter-rouge">Ctrl+c</code> twice.</p>
+
+<h2 id="official-documentation">Official documentation</h2>
+
+<p>It’s always a great idea to be able to look through documentation when you have a question. Using documentation is often overlooked as a skill and thus, we propose it’s a great idea to start with documentation from the beginning.</p>
+
+<p>The official documentation can be found on the <a href="http://elixir-lang.org/docs.html">elixir-lang docs</a> page. We’ll be using the latest <em>stable</em> version of the Elixir documenation which is available at <a href="https://hexdocs.pm/elixir/">https://hexdocs.pm/elixir/</a>.</p>
+
+<h2 id="loading-files">Loading Files</h2>
+
+<p>There are several different ways to load files into our interactive shell. Using the <code class="highlighter-rouge">c</code> command we can tell our REPL which file to compile.</p>
+
+<p>Let’s create a file names ‘calc.ex’</p>
+
+<p>type the following into the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch calc.ex
+</code></pre></div></div>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">c</span><span class="p">(</span><span class="sd">"</span><span class="s2">calc.ex"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>using the <code class="highlighter-rouge">r</code> command we can recompile.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">r</span> <span class="p">(</span><span class="no">Calc</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To see what the <code class="highlighter-rouge">r</code> function does we can use our help command</p>
+
+<p>Type: <code class="highlighter-rouge">h r</code> into the terminal</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iex</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">h</span> <span class="n">r</span>
+
+<span class="k">def</span> <span class="n">r</span><span class="p">(</span><span class="n">module</span><span class="p">)</span>
+
+<span class="no">Recompiles</span> <span class="ow">and</span> <span class="n">reloads</span> <span class="n">the</span> <span class="n">given</span> <span class="n">module</span><span class="o">.</span>
+
+<span class="no">Please</span> <span class="n">note</span> <span class="n">that</span> <span class="n">all</span> <span class="n">the</span> <span class="n">modules</span> <span class="n">defined</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">same</span> <span class="n">file</span> <span class="n">as</span> <span class="n">module</span> <span class="n">are</span>
+<span class="n">recompiled</span> <span class="ow">and</span> <span class="n">reloaded</span><span class="o">.</span>
+
+<span class="no">This</span> <span class="n">function</span> <span class="n">is</span> <span class="n">meant</span> <span class="n">to</span> <span class="n">be</span> <span class="n">used</span> <span class="n">for</span> <span class="n">development</span> <span class="ow">and</span> <span class="n">debugging</span> <span class="n">purposes</span><span class="o">.</span> <span class="no">Do</span>
+<span class="ow">not</span> <span class="n">depend</span> <span class="n">on</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">production</span> <span class="n">code</span><span class="o">.</span>
+</code></pre></div></div>
+
+<h3 id="arity">Arity</h3>
+
+<p>We have mentiond the term Arity a few times. Arity means the number of arguments a function takes.</p>
+
+<p>In Elixir when we see a function name it will include the <code class="highlighter-rouge">arity</code> of the function</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rem</span><span class="o">/</span><span class="m">2</span>
+<span class="n">c</span><span class="o">/</span><span class="m">1</span>
+</code></pre></div></div>
+
+<p>We can see that the <code class="highlighter-rouge">rem</code> function has an arity of 2.</p>
+
+<p>The <code class="highlighter-rouge">c</code> or compile function has an arity of 1.</p>
+
+  </article>
+  
+  
+  
+  
+    <h4>Next step: </h4>
+    <p>Go on to <a href="/02_Intro_to_Elixir/04-elixir-types.html">Elixir Types</a>.</p>
+  
+  
+    <h4>Or:</h4>
+    <p>Go back to <a href="/02_Intro_to_Elixir/01-why-program-why-elixir.html">Why program? Why elixir?</a>.</p>
+  
+
+
+
+</div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">ElixirBridge for Girls</h3>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:info@elixirbridge.org">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">info@elixirbridge.org</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/elixirbridge" title="Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/elixir-bridge" title="GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/elixir-bridge.github.io/feed.xml">via RSS</a></strong></p>
+      <p class="text">We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+  // Syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  const hamburgerMenu = document.getElementById("js-mobile-menu")
+  const sidebar = document.getElementsByClassName("sidebar")[0]
+
+  hamburgerMenu.addEventListener("click", () => {
+    sidebar.classList.toggle("mobile-show")
+  })
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

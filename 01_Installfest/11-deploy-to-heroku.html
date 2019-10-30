@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="R6ba5MLXyH1nPWUW2FaRbcaaqid5fFEUiymqWpcGEFc" />
+
+  <title>Deploy to Heroku</title>
+  <meta name="description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  
+  <meta name="author" content="ElixirBridge">
+  <meta name="copyright" content="&copy; ElixirBridge 2019">
+  
+
+  <!-- External libraries -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/monokai_sublime.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css">
+
+  <!-- Favicon and other icons (made with http://www.favicon-generator.org/) -->
+  <link rel="shortcut icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/elixir-bridge.github.io/assets/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="/elixir-bridge.github.io/assets/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/elixir-bridge.github.io/assets/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/elixir-bridge.github.io/assets/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/elixir-bridge.github.io/assets/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/elixir-bridge.github.io/assets/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/elixir-bridge.github.io/assets/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/elixir-bridge.github.io/assets/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/elixir-bridge.github.io/assets/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/elixir-bridge.github.io/assets/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/elixir-bridge.github.io/assets/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/elixir-bridge.github.io/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/elixir-bridge.github.io/assets/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/elixir-bridge.github.io/assets/icons/favicon-16x16.png">
+  <link rel="manifest" href="/elixir-bridge.github.io/assets/icons/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/elixir-bridge.github.io/assets/icons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <!-- Facebook OGP cards -->
+  <meta property="og:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+" />
+  <meta property="og:url" content="" />
+  <meta property="og:site_name" content="ElixirBridge for Girls" />
+  <meta property="og:title" content="Deploy to Heroku" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/elixir-bridge.github.io/assets/logo.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="612" />
+  <meta property="og:image:height" content="605" />
+  
+
+  
+  <!-- Twitter: card tags -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Deploy to Heroku">
+  <meta name="twitter:description" content="We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+">
+  <meta name="twitter:image" content="/elixir-bridge.github.io/assets/logo.png">
+  <meta name="twitter:url" content="">
+  
+
+  
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="/elixir-bridge.github.io/css/main.css">
+  <link rel="canonical" href="/elixir-bridge.github.io/01_Installfest/11-deploy-to-heroku.html">
+  <link rel="alternate" type="application/rss+xml" title="ElixirBridge for Girls" href="/elixir-bridge.github.io/feed.xml" />
+</head>
+
+
+  <body>
+
+    <header class="navigation" role="banner">
+  <div class="navigation-wrapper">
+    <a href="/elixir-bridge.github.io/" class="logo">
+      
+      <img src="/elixir-bridge.github.io/assets/logo.png" alt="ElixirBridge for Girls">
+      
+    </a>
+    <a href="javascript:void(0)" class="navigation-menu-button" id="js-mobile-menu">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</header>
+
+
+    <div class="page-wrapper">
+      <div class="sidebar">
+  <!-- get the sections -->
+
+
+
+
+<!-- make them an array -->
+
+
+
+<h4>
+  
+    <a href="/docs">Docs</a>
+  
+</h4>
+
+
+<!-- spit them out as a list of lists -->
+
+  
+
+  
+    <h4>Installfest</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/01-begin-installfest.html'>Installfest</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/02-choose-your-own-operating-system.html'>Choose your own operating system</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-macintosh-osx-setup.html'>Mac OSX setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/03-windows-setup.html'>Windows setup</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/04-install-and-configure-git.html'>Install and Configure git</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/05-install-elixir-and-phoenix.html'>Install Elixir and Phoenix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/06-create-an-ssh-key.html'>Create an SSH Key</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/07-create-a-heroku-account.html'>Create a Heroku Account</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/08-create-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/09-generate-a-database-model.html'>Generate a Database Model</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/10-deploy-a-phoenix-app.html'>Deploy a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/01_Installfest/11-deploy-to-heroku.html'>Deploy to Heroku</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Elixir</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/01-why-program-why-elixir.html'>Why program? Why elixir?</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/03-learning-elixir.html'>Learning Elixir</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/04-elixir-types.html'>Elixir Types</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05-operators-and-variables.html'>Operators and Variables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.5-anonymous-functions-lists-and-tuples.html'>Lists and Tuples</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.6-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.7-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/05.9-enumerables.html'>Enumerables</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06-pattern-matching.html'>Pattern Matching</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.4-modules.html'>Modules</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/06.5_Functions.html'>Functions</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/08-keyword-lists.html'>Keyword Lists</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/09-maps-and-nested-data-structures.html'>Maps and Nested Data Structures</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/02_Intro_to_Elixir/12-recursion.html'>Recursion</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Intro to Phoenix</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/01-creating-a-chat-app.html'>Creating a Chat App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/02-add-a-perisistence-layer.html'>Adding a Persistence layer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/13-create-a-phoenix-app.html'>Create a Phoenix App</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/14-running-the-application-locally.html'>Running the Application Locally</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/15-creating-a-migration.html'>Creating a Migration</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/16-phoenix-architecture.html'>Phoenix architecture</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/17-CRUD-with-scaffolding.html'>CRUD with scaffolding</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/03_Intro_to_Phoenix/18-setting-the-default-page.html'>Setting the Default Page</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+  
+    <h4>Mix Applications</h4>
+    <ul class="sidebar-list">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/01-mix.html'>Mix</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/02-adding-dependencies.html'>Adding dependencies</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/03-testing.html'>Testing</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/04-set-up-my-app.html'>Our first application</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/05-interacting-with-iex.html'>Interacting with iex</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/06-environments.html'>Environments</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/07-documentation.html'>Documentation</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/12-supervisors.html'>Supervisors</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/13-router.html'>Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/14-plugs.html'>Plugs</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/15-plug-router.html'>Plug.Router</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16-templating.html'>Templating</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/16.5-genserver.html'>GenServer</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/17-deployment.html'>Deployment</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/18-dockerfile.html'>Docker and the Dockerfile</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/19-distillery-config.html'>Distillery</a></li>
+      
+    
+      
+        <li class="sidebar-list-item"><a href='/elixir-bridge.github.io/04_Mix_Applications/20-running-docker.html'>Running docker</a></li>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </ul>
+  
+
+
+</div>
+
+      <div class="page-content">
+          <div class="wrapper">
+<div class="page">
+
+  <header class="post-header">
+    <h1 class="post-title">Deploy to Heroku</h1>
+  </header>
+
+  <article class="post-content">
+    <h3 id="deploy-time">Deploy Time!!!</h3>
+
+<p>Go to heroku.com</p>
+
+<p>Click on your app</p>
+
+<p>Then click on settings</p>
+
+<p><img src="../assets/heroku-app-interface.png" alt="heroku app interface" /></p>
+
+<p>You should see something that looks like this</p>
+
+<p><img src="../assets/reveal-heroku-config-vars.png" alt="heroku config vars" /></p>
+
+<p>Click on the button that says <strong>Reveal Config Vars</strong></p>
+
+<p>Make sure you have the following environment variables set.
+Note - they may not be set in this same order. Anything not
+in this list, you should set.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">DATABASE_URL</span><span class="pi">:</span> <span class="s">heroku-sets-this-for=you</span>
+<span class="na">MIX_ENV</span><span class="pi">:</span> <span class="s">prod  **you need to set this one**</span>
+<span class="na">POOL_SIZE</span><span class="pi">:</span> <span class="s">18</span>
+<span class="na">SECRET_KEY_BASE</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Now in the empty row at the bottom of the page</p>
+
+<p><img src="../assets/empty-heroku-config-var1.png" alt="empty heroku config var" /></p>
+
+<p>in the first empty field create a new variable called</p>
+
+<p>‘NEW_DATABASE_URL’</p>
+
+<p>Then take a look at the value in your DATABASE_URL variable, by clicking on the pencil icon next to it. It should look something like</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://xxxxxxxxxxxxxxx@xxxxxxxxx.amazonaws.com:5432/xxxxxxx
+</code></pre></div></div>
+
+<p>Copy the portion after the @ sign through amazon.com and paste it as the value for the NEW_DATABASE_URL.</p>
+
+<p>So it will be something like <code class="highlighter-rouge">abedsd.amazonaws.com.</code></p>
+
+<p>Then in the next blank field under the var settings type in <code class="highlighter-rouge">USERNAME</code> on the right. Then take another look at your database url.</p>
+
+<p>For example this database url look like so</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://abscdefg:123456@12-245-123-12.compute-1.amazonaws.com:5432/d51oep5q7b7bbi
+</code></pre></div></div>
+<p>It has the following format</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://username:password@12-245-123-12.compute-1.amazonaws.com:5432/databse
+</code></pre></div></div>
+
+<p>Copy the username portion of the url and paste is at the left value in your config variables.</p>
+
+<p>Then Click Add.</p>
+
+<p>It should look like this</p>
+
+<p><img src="../assets/heroku-db-username.png" alt="heroku-database-username" /></p>
+
+<p>Do the same for password. Create a Variable called <code class="highlighter-rouge">PASSWORD</code>. and then copy the password from the correct portion of the database url</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://username:password@12-245-123-12compute-1.amazonaws.com:5432/databse
+</code></pre></div></div>
+
+<p>Do the same again for database. Create a Variable called <code class="highlighter-rouge">DATABASE</code> and copy the value from the end of the DATABASE URL. Here is an example -</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>postgres://username:password@12-245-123-12compute-1.amazonaws.com:5432/database
+</code></pre></div></div>
+
+<p>Your config should look something like this
+<img src="../assets/heroku-config1.png" alt="heroku config" /></p>
+
+<p>You should have the following variables now defined</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">DATABASE_URL</span><span class="pi">:</span>
+<span class="na">DATABASE</span><span class="pi">:</span>
+<span class="na">MIX_ENV</span><span class="pi">:</span>
+<span class="na">PASSWORD</span><span class="pi">:</span>
+<span class="na">POOL_SIZE</span><span class="pi">:</span>
+<span class="na">SECRET_KEY_BASE</span><span class="pi">:</span>
+<span class="na">USER_NAME</span><span class="pi">:</span>
+<span class="na">NEW_DATABSE_URL</span><span class="pi">:</span>
+</code></pre></div></div>
+
+<p>Then Open up your <code class="highlighter-rouge">config/prod.exs</code> file. It should look like this.</p>
+
+<div class="language-elixir highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Configure your database</span>
+<span class="n">config</span> <span class="ss">:test_app</span><span class="p">,</span> <span class="no">TestApp</span><span class="o">.</span><span class="no">Repo</span><span class="p">,</span>
+  <span class="ss">adapter:</span> <span class="no">Ecto</span><span class="o">.</span><span class="no">Adapters</span><span class="o">.</span><span class="no">Postgres</span><span class="p">,</span>
+  <span class="ss">hostname:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="sd">"</span><span class="s2">NEW_DATABASE_URL"</span><span class="p">),</span>
+  <span class="ss">pool_size:</span> <span class="no">String</span><span class="o">.</span><span class="n">to_integer</span><span class="p">(</span><span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="sd">"</span><span class="s2">POOL_SIZE"</span><span class="p">)</span> <span class="o">||</span> <span class="sd">"</span><span class="s2">10"</span><span class="p">),</span>
+  <span class="ss">ssl:</span> <span class="no">true</span><span class="p">,</span>
+  <span class="ss">database:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="sd">"</span><span class="s2">DATABASE"</span><span class="p">),</span>
+  <span class="ss">username:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="sd">"</span><span class="s2">USERNAME"</span><span class="p">),</span>
+  <span class="ss">password:</span> <span class="no">System</span><span class="o">.</span><span class="n">get_env</span><span class="p">(</span><span class="sd">"</span><span class="s2">PASSWORD"</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Let’s commit all our changes. Copy each of the lines below into your terminal one at a time. Do not do this all at once.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add config/prod.exs
+git add Procfile.txt
+git add lib/test_app_web/channels/user_socket.ex
+git commit <span class="nt">-m</span> <span class="s2">"Use production config from Heroku ENV variables and deploy environment"</span>
+</code></pre></div></div>
+
+<p>And now DEPLOY!!</p>
+
+<p>Type this into your terminal:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push heroku master
+</code></pre></div></div>
+
+<p>You will see a bunch of stuff and at the end you will see</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>remote:
+remote: Verifying deploy.... <span class="k">done</span><span class="nb">.</span>
+To https://git.heroku.com/stormy-stream-65433.git
+   ae7601a..e5c410b  master -&gt; master
+Annas-MacBook-Pro-3:test_app anheroku logs <span class="nt">-a</span> stormy-stream-65433
+</code></pre></div></div>
+
+<p>If you do not see the ‘Verifying deploy…done’, ask a TA for help.</p>
+
+<p>next type the following into your terminal</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install brunch
+</code></pre></div></div>
+
+<p>then type</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node_modules/brunch/bin/brunch  build <span class="nt">--production</span>
+
+</code></pre></div></div>
+
+<p>Finally type</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku run <span class="s2">"mix ecto.migrate"</span>
+</code></pre></div></div>
+
+<p>YAY all done!</p>
+
+<p>Type</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku open
+</code></pre></div></div>
+<p>to see your app.</p>
+
+  </article>
+  
+  
+  
+  
+    <h4>Next step: </h4>
+    <p>Go on to <a href="/02_Intro_to_Elixir/01-why-program-why-elixir.html">Why program? Why elixir?</a>.</p>
+  
+  
+    <h4>Or:</h4>
+    <p>Go back to <a href="/01_Installfest/10-deploy-a-phoenix-app.html">Deploy a Phoenix App</a>.</p>
+  
+
+
+
+</div>
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h3 class="footer-heading">ElixirBridge for Girls</h3>
+
+    <div class="site-contact">
+
+      <p><strong>Contact</strong></p>
+      <ul class="social-media-list">
+        <li>
+          <a href="mailto:info@elixirbridge.org">
+            <i class="fa fa-envelope-o"></i>
+            <span class="username">info@elixirbridge.org</span>
+          </a>
+        </li>
+
+        
+          
+          <li>
+            <a href="https://twitter.com/elixirbridge" title="Twitter">
+              <i class="fa fa-twitter"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+          
+          <li>
+            <a href="https://github.com/elixir-bridge" title="GitHub">
+              <i class="fa fa-github"></i>
+              <span class="username">elixirbridge</span>
+            </a>
+          </li>
+          
+        
+
+      </ul>
+    </div>
+
+    <div class="site-signature">
+      <p class="rss-subscribe text"><strong>Subscribe <a href="/elixir-bridge.github.io/feed.xml">via RSS</a></strong></p>
+      <p class="text">We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+</p>
+    </div>
+
+  </div>
+
+</footer>
+
+<!-- Scripts -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js"></script>
+<script>
+
+$(document).ready(function() {
+
+  // Syntax highlighting
+  hljs.initHighlightingOnLoad();
+
+  const hamburgerMenu = document.getElementById("js-mobile-menu")
+  const sidebar = document.getElementsByClassName("sidebar")[0]
+
+  hamburgerMenu.addEventListener("click", () => {
+    sidebar.classList.toggle("mobile-show")
+  })
+});
+
+</script>
+
+
+
+
+  </body>
+
+</html>

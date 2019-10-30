@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ElixirBridge for Girls</title>
+    <description>We empower people with technology through teaching and facilitating access, enlarging the community of people who give back and teach others.
+</description>
+    <link>/elixir-bridge.github.io/</link>
+    <atom:link href="/elixir-bridge.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 30 Oct 2019 12:05:52 +0100</pubDate>
+    <lastBuildDate>Wed, 30 Oct 2019 12:05:52 +0100</lastBuildDate>
+    <generator>Jekyll v3.7.4</generator>
+    
+  </channel>
+</rss>
